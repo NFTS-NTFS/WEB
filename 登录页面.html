@@ -6,16 +6,36 @@
 </head>
 
 <body>
+<script>
+    function CheckForm(){
+        var name = document.getElementById("username").value;
+        var Password = document.getElementById("pass").value;
+        user = /李响/;
+        pass = /LIXIANG/;
+        if (!user.test(name)){
+            alert("用户名错误");
+            return false;
+        }
+        if (!pass.test(Password)){
+            alert("密码错误");
+            return false;
+        }
+        return true;
+    }
+</script>
 <style>
 body{background-color: aqua; }
 form{
     font-family:楷体; font-size:16px; color:#336699; text-align:center; line-height:200%;  
 }
-</style>  
-<form name="MYform" method="GET" action="https://github.com/NFTS-NTFS/web-/blob/main/通讯录列表页面.html" >
-用户名<input type="text" name="user" value="李响"> <br> 
- 密 码 <input type="password" name="password" value="XIANG2241018"><br>
-<input type="submit" value="登录"><br>
+</style>
+<form name="MYform" method="GET" action="通讯录列表页面.html" onsubmit="return CheckForm()">
+用户名<input type="text" id="username"> <br> 
+ 密 码 <input type="password" id="pass"><br>
+<input type="submit" value="登录" ><br>
+<p style="background-color:rgb(48, 3, 3); color: red;">
+    <b>测试账户：</b> 用户名：李响  密码：LIXIANG
+</p>
 </form>
 </body>
 <html>
